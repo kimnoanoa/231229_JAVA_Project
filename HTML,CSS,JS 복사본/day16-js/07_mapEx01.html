@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Input 두개 생성해서 과목과 점수를 입력해
+        맵에 추가
+        출력 => 맵 ul => li 형태로 출력
+        결과 => 합계,평균,합격여부 (60이상ㅇ면 합격 ) => h3
+     -->
+
+   <form action="">
+     과목 : <input type="text" id=" subject"> <br>
+     점수 : <input type="number" id ="score"> <br>
+     <button type="button" onclick="add()">추가</button>
+     <button type="button" onclick="printSub()">출력</button>
+     <button type="button" onclick="result()">결과</button>
+     <h3 id="print"></h3>
+
+   </form>  
+
+
+   <script>
+
+    const subMap = new Map();
+
+    let sum = 0;
+    let avg = 0;
+    let pass = "";
+    let count =0;
+    let result ="";
+
+       function add(){
+        
+        let subject = document.getElementById('subject').values;
+        let score = document.getElementById('score').values;
+        sum+= score;
+        count++;
+
+        subMap.add(subject,score);
+
+       }
+
+       function printSub(){
+            document.getElementById('print').innerText=
+            // `${subMap.key} : ${submap.values}`;
+
+            subMap.forEach(function(i,v){
+            result += `${subMap.i} : ${subMap.v}`;
+        })
+       }
+
+            avg = sum/count;
+            if (avg >= 60){
+                pass = "합격";
+            }else{
+                pass = "불합격";
+            }
+
+       function result(){
+            document.getElementById('printSub').innerText =
+            `과목의 점수합계 : ${sum} <br>
+            평균 : ${sum / count} <br>
+            합격여부 : ${pass}`;
+
+       }
+       
+       
+
+
+   </script>
+</body>
+</html>

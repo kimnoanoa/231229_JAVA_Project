@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:ital@0;1&family=Nanum+Pen+Script&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sunflower:wght@300&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+    <!-- span class close X -->
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+        <input type="text" id="item" autofocus="true">
+        <button type="button" class="a b c list" id="add">추가</button>
+        </form>
+        <div>
+            <ul id="itemList"></ul>
+        </div>
+    </div>
+    <script>
+        
+        let itemList = document.getElementById('itemList'); 
+        const list =[];
+
+        document.getElementById('add').addEventListener('click',()=>{
+            addList();
+        })
+
+        function addList(){
+            let item1 = document.getElementById('item').value;
+            // itemlist += item;
+            if (item1 == ""){
+                alert('값을 입력하세요.');
+            }else{
+                list.push('item1');
+            }
+
+            document.getElementById('item1').value = "";
+
+        }
+
+        function print(){
+
+
+
+
+        }
+    </script>
+</body>
+</html>

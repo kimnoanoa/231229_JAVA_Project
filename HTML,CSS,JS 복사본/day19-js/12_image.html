@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:ital@0;1&family=Nanum+Pen+Script&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sunflower:wght@300&display=swap" rel="stylesheet"> -->
+    <style>
+       
+        h1{
+            text-align: center;
+            border: 5px solid black;
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            margin: 10px auto 30px;
+            
+        }
+        nav{
+            text-align: center;
+           margin-bottom: 30px;
+           position: sticky;
+           font-weight: bold;
+           word-spacing: 30px;
+           
+        }
+        nav>a{
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 50px;
+            margin: 20px auto;
+        }
+        img{
+            display: block;
+            margin: 10px auto 30px;
+        }
+        a:hover{
+            color: rgb(250, 213, 91);
+        }
+    </style>
+</head>
+<body>
+     <p>
+        <h1>Travel</h1>
+    </p>
+        <nav>
+            <a id="home" onclick="clickCity(this)">Home</a>
+            <a id="seoul" onclick="clickCity(this)">Seoul</a>
+            <a id="tokyo" onclick="clickCity(this)">Tokyo</a>
+            <a id="paris" onclick="clickCity(this)">Paris</a>
+            
+        </nav>
+
+        <img src="..//image/일몰.jpeg" alt="home" class="main-img">
+
+        <script>
+            function clickCity(e){
+                console.log(e);
+                let idVal = e.id;
+                document.getElementById('main-img').src = 
+                `../image/${idval}.jpg`;
+            }
+
+        </script>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘은?</h1>
+    <button type="button" id="btn" onclick="day()">Today</button>
+    <h3 id="result">
+        <!-- 오늘 날짜와 요일 출력 -->
+        <!-- 2024.03.19.(화) -->
+    </h3>
+
+    <script>
+
+        function day(){
+            
+        let today = new Date();    
+        let today2 = today.toLocaleDateString();
+        let today3 = today.getDay();
+        let today4 = "";
+        if (today3 == 0){
+            today4 = "일";
+        }else if (today3 == 1){
+            today4 = "월";
+        }else if (today3 ==2){
+            today4 = "화";
+        }else if(today3 ==3){
+            today4 = "수";
+        }else if(today3 ==4){
+            today4 = "목";
+        }else if(today3 ==5){
+            today4 = "금";
+        }else if(today3 ==6){
+            today4 = "토";
+        }else{
+            console.log("잘못된 요일입니다.");
+        }
+
+        // result.innerHTML = `${today2}(${today4})`;
+        document.getElementById(`result`).innerHTML= `${today2}(${today4})`;
+
+    }
+        
+    </script>
+</body>
+</html>

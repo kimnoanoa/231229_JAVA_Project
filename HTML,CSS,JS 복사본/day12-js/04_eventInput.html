@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        form 태그를 통해 데이터 받아오기
+    </h1>
+    <ul>
+        <li>
+            input , textarea , select , html element 속성, 텍스트 데이터를 받아올 수 있음
+        </li>
+        <li>
+            input tag 는 value 속성으로 값이 맵핑되어있음
+            value로 값을 가져올 수 있음.
+
+        </li>
+        <li>
+            select => option / radio / checkbox value 값을 별도로 추가해주어야 선택한 값을 가져올 수 있음.
+        </li>
+        <li>
+            value / innerText 값은 모두 string 처리되어서 받아짐. (숫자도)
+        </li>
+        <li>
+            string 처리된 value 값을 숫자로 사용하기 위해서는 변환이 필요
+        </li>
+    </ul>
+    <form action="">
+        <fieldset>
+            <legend>이벤트를 활용한 데이터전송</legend>
+            id : <input type="text" id="userid"> <br>
+            pw : <input type="text" id="userpw"><br>
+            birth : <input type="date" id="birth"><br>
+            pin : <input type="text" id="pin"><br>
+            <button type="button" onclick="clickEventInput()">전송</button>
+            <button type="button" onclick="makelist()">리스트로 전송</button>
+        </fieldset>
+
+    </form>
+    <h3 id="info"></h3>
+    <ol id="ol">
+    
+    </ol>
+
+    <script>
+
+        const ol = document.getElementById('ol');
+        const info = document.getElementById('info');
+        // ol태그 객체를 가져오기
+        let userid = document.getElementById('userid');
+        let userpw = document.getElementById('userpw');
+        let birth = document.getElementById('birth');
+        let pin = document.getElementById('pin');
+        
+        // function makelist(){
+            
+        //     ol.innerHTML=`<li>userid : ${userid.value}</li?`;
+        //     ol.innerHTML+=`<li>userpw : ${userpw.value}</li?`;
+        //     ol.innerHTML+=`<li>birth : ${birth.value}</li?`;
+        //     ol.innerHTML+=`<li>pin : ${pin.value}</li?`;
+            
+           
+        // }
+        function makelist(){
+            
+            // pin 값을 숫자로 변환
+            // string => 숫자로 변환
+            // parseInt (변수 => 정수로 변경 (int 형태로 변환)) // 정수만 가능
+            // Numbeer (변수 => 숫자로 변경될수 있는 값)
+            let pinval = Number(pin.value);
+
+            ol.innerHTML=`<li>userid : ${userid.value}</li?`;
+            ol.innerHTML+=`<li>userpw : ${userpw.value}</li?`;
+            ol.innerHTML+=`<li>birth : ${birth.value}</li?`;
+            ol.innerHTML+=`<li>pin : ${pin.value}</li?`;
+            
+           
+        }
+
+        function clickEventInput(){
+            // 화면에 입력한 값을 받아오는 과정
+            // 1. 화면에 값이 있어야 함.
+            // 2. 저장할 공간이 있어야 함.
+            let userid = document.getElementById('userid').value;
+            let userpw = document.getElementById('userpw').value;
+            let birth = document.getElementById('birth').value;
+            let pin = document.getElementById('pin').value;
+            console.log(`userid : ${userid}`);
+            console.log(`userpw : ${userpw}`);
+            console.log(`birth : ${birth}`);
+            console.log(`pin : ${pin}`);
+            let str = `userid : ${userid}`;
+            str+= `userpw : ${userpw}`; //+= 안쓰면 덮어쓰기됨
+            str+= `birth : ${birth}`;
+            str+= `pin : ${pin}`;
+            info.innerText = str;
+        }
+    </script>
+</body>
+</html>

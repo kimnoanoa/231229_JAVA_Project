@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "HTML,CSS,JS",
+			"path": ".."
+		},
+		{
+			"name": "image",
+			"path": "../../image"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HTML,CSS,JS"
+	}
+}

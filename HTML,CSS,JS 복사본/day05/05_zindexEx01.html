@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tbox{
+            width: 400px;
+            height: 500px;
+            border: 2px solid black;
+            text-align: center;
+            margin: 100px 200px;
+            
+        }
+        .tbox::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .t1{
+            width: 350px;
+            height: 60px;
+            border: 3px solid black;
+            margin: 10px 20px;
+            font-size: 40px;
+            line-height: 60px;
+            
+        }
+        .t2{
+            width: 350px;
+            height: 320px;
+            border: 3px solid black;
+            margin: 10px 20px;
+        }
+        .t3{
+            width: 350px;
+            height: 60px;
+            border: 3px solid black;
+            margin: 10px 20px;
+            font-size: 40px;
+            line-height: 60px;
+        }
+        .box{
+            width: 120px;
+            height: 120px;
+            /* border: 1px solid black; */
+            position: absolute;
+            
+        }
+        .box1{
+            top: 240px;
+            left:300px;
+            background-color: rgb(244, 118, 118);
+            z-index: 5;
+            box-shadow:  10px 10px 10px darkgrey;
+        }
+        .box2{
+            top: 290px;
+            left:340px;
+            background-color: rgb(133, 241, 133);
+            z-index: 4;
+            box-shadow:  10px 10px 10px darkgrey;
+        }
+        .box3{
+            top: 340px;
+            left:380px;
+            background-color: rgb(120, 120, 238);
+            z-index: 3;
+            box-shadow:  10px 10px 10px darkgrey;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="tbox">
+        <div class="t1">텍스트</div>
+        <div class="t2">
+
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+
+        </div>
+        <div class="t3">텍스트</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            /* line-height: 30px; */
+            /* margin: 20px auto 20px; */
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        가격 : <input type="text" id="price" > 원 <br>
+        할인율 : <input type="text" id="sale"> % <br>
+        <button type="button" onclick="result()">할인가격 계산</button>
+        
+
+    </form>
+
+    <h4 id="a"></h4>
+
+    <script>
+
+        function result(){
+            let price = document.getElementById('price').value;
+            let sale = document.getElementById('sale').value;
+
+            let salePrice = Number(price-(price/sale));
+            let dc = Number(price/sale);
+
+
+            a.innerHTML = `<li>가격 : ${price} 원 </li>`
+            a.innerHTML+=`<li>할인율 : ${sale} % </li>`;
+            a.innerHTML+=`<li>할인금액 : ${dc} 원</li>`;
+            a.innerHTML+=`<li>총 가격 : ${salePrice} 원</li>`;
+        }
+
+    </script>
+</body>
+</html>

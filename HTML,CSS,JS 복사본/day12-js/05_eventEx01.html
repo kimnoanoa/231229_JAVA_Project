@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        성적 확인
+        이름 : 홍길동
+        국어점수 : input
+        영어점수 :input
+        수학 : input
+        성적계산 버튼
+        ----------------
+        이름 : 홍길동
+        국어점수 : 80
+        영어점수 :90
+        수학 : 80
+        합계 : 00
+        평균 : 00표시
+
+     -->
+     <h3>성적표</h3>
+     <form action="" >
+        이름: <input type="text" id="name"> <br>
+        국어: <input type="text" id="kor"> <br>
+        영어: <input type="text" id="eng"><br>
+        수학: <input type="text" id="math"><br>
+        <button type="button" onclick="grade()" >성적 계산</button>
+
+     </form>
+     <h4 id="result"></h4>
+
+     <script>
+
+        function grade(){
+
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let eng = document.getElementById('eng').value;
+            let math = document.getElementById('math').value;
+
+            let korval = Number(kor);
+            let engval = Number(eng);
+            let mathval = Number(math);
+            let sum = (korval+engval+mathval);
+            let avg = (sum/3);
+
+            //.toFixed(2) : 소수점 자리표현
+
+            result.innerHTML=`<li>이름 : ${name}</li>`;
+            result.innerHTML+=`<li>국어점수 : ${kor}</li>`;
+            result.innerHTML+=`<li>영어점수 : ${eng}</li>`;
+            result.innerHTML+=`<li>수학점수 : ${math}</li>`;
+    
+                
+            result.innerHTML+=`<li>합계 : ${sum}</li>`;
+            result.innerHTML+=`<li>평균: ${avg}</li>`;
+            
+            
+                
+        }
+
+     </script>
+</body>
+</html>

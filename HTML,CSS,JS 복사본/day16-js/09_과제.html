@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set 을 이용한 로또 만들기</title>
+</head>
+<body>
+    <h1>
+        1~45까지 중복되지 않게 숫자 6개를 랜덤으로 추출 => 출력 <br>
+        set 객체를 이용하여 생성
+    </h1>
+    <button type="button" id="btn1" >랜덤번호 6자리 생성(출력)</button> <br>
+    <h2 id="lotto1"></h2>
+    <button type="button" id="btn2">당첨번호 7자리(마지막번호는 보너스번호) 생성(출력)</button> <br>
+    <h2 id="lotto2"></h2>
+    <button type="button" id="btn3">결과 확인</button><br>
+    <h2 id="result"></h2>
+  
+    <script>
+        const myNum = new Set();
+        const lottoNum = new Set();
+
+     
+        function Lotto(){
+            
+                return Math.floor(Math.random()*10)+1;
+            }
+            
+        document.getElementById('btn1').addEventListener('click',()=>{
+            while(myNum.size <6){
+                myNum.add(Lotto());
+                console.log(myNum);
+            }
+            let str ="";
+            myNum.forEach(function(v){
+                str += `${v}   `;
+            })
+
+            document.getElementById('lotto1').innerHTML = `${str}`;
+        })
+
+        document.getElementById('btn2').addEventListener('click',()=>{
+            while(lottoNum.size <7){
+                lottoNum.add(Lotto());
+                console.log(lottoNum);
+            }
+            let str2='';
+            lottoNum.forEach(function(v){
+                str2 += `${v}   `;
+               
+            })
+            document.getElementById('lotto2').innerHTML = `${str2}`;
+        })
+
+        document.getElementById('btn3').addEventListener('click',()=>{
+            let cnt =0;
+            let str3 ='';
+            myNum.forEach(function(v){
+                lottoNum.forEach(function(k){
+                    if (v == k){
+                        cnt++;
+                    }
+                })
+            })
+
+            // include () : 하나의 문자열이 다른 문자열에 있는지 확인 true /false
+            // lottoArr.includes(bouns)?
+            // print= '2등 당첨' : '3등 당첨';
+
+            switch(cnt){
+                case 0 : 
+                str3 = `꽝입니다.`;
+                break;
+                case 1: 
+                str3 =  `꽝입니다.`;
+                break;
+                case 2 :
+                str3 = `꽝입니다.`;
+                break;
+                case 3:
+                str3 = `5등당첨!`;    
+                break;
+                case 4:
+                str3 = `3등당첨!`;  
+                break;
+                case 5 :
+                str3 = `2등당첨!`;
+                break;
+                case 6 : 
+                str3 = `1등을 축하합니다~!`;
+                break;
+    
+            }
+            document.getElementById('result').innerHTML =
+            `맞은 번호 개수 : ${cnt} / ${str3}`;
+
+
+        })
+
+        
+
+
+    </script>
+</body>
+</html>

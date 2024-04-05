@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .pbox{
+
+            background-color: antiquewhite;
+            width: 1000px;
+            height: 150px;
+            /* position: relative; */
+
+        }
+        .pbox::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .pbox>div{
+            height: 100px;
+            width: 100px;
+            
+            text-align: center;
+            float: left;
+        }
+        .box1{
+            background-color: rgb(163, 233, 209);
+            margin: 25px 25px ;
+        }
+        .box2{
+            background-color: rgb(228, 225, 126);
+            float: left;
+            margin: 25px 300px;
+            
+            /* transform: translate(-50%); */
+        }
+        .box3{
+            background-color: rgb(220, 135, 135);
+            margin: 25px;
+        }
+        .hbox{
+            background-color: rgb(151, 103, 196);
+            width: 500px;
+            height: 500px;
+            
+        }
+        .hbox::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .hbox>div{
+            height: 100px;
+            width: 100px;
+        }
+        .box4{
+            float: left;
+            margin: 200px 200px;
+            background-color: rgb(232, 211, 246);
+            text-align: center;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pbox">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <div class="hbox">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

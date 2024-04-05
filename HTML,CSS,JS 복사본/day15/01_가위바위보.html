@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>가위바위보를 10번 하여 승률 출력</h1>
+    <button type="button" id="btn" onclick="game()">승률출력</button>
+    <h3>
+        10게임의 승률은 <span id="result"></span>%입니다.
+    </h3>
+    <script>
+        // 가위바위보 게임
+        //com = random / player = random
+        // 1가위 2가위 3보
+        // 승률계산 (승 / (10 -무)) 100 소수점 2자리까지 표현
+        // 콘솔에 com, player 출력
+        // 콘솔에 승 : 무: 패:
+
+        //.toFixed(2) : 소수점 자리표현
+
+        function game(){
+
+            // let s = 0;
+            // let m = 0;
+            // let p = 0;
+            // let com;
+            // let player;
+            // let count = 0;
+
+
+            // for (let i = 1 ; i <= 10 ; i++){
+            //     com = Math.floor(Math.random()*3)+1;
+            //     player = Math.floor(Math.random()*3)+1;
+            // };
+            
+            // if (player < com){
+            //     p++;
+            // }else if(player > com){
+            //     s++;
+            // }else{
+            //     m++;
+            // };
+            
+            
+            // document.getElementById('result').innerHTML = `${com} / ${player}`;
+            // console.log() `승 : ${s}, 무 : ${m}, 패: ${p}`;
+
+            // function ran(){
+            //     return Math.floor(Math.random()*3)+1;
+            // }
+
+            document.getElementById('btn').addEventListener('click',()=>{
+                let win = 0; //승
+                let draw = 0; //무
+                let lose = 0; //패
+
+                for(let i = 1; i <= 10; i++){
+                    let player = Math.floor(Math.random()*3)+1;
+                    let com = Math.floor(Math.random()*3)+1;
+                    console.log(player + "  /  " +com);
+
+                    switch(player){
+                        case 1:
+                            //가위  무 패 승
+                            (com==1) ? draw++ : (com ==2)? lose++ : win++;
+                             break;
+                        case 2:
+                            //바위
+                            (com==2)? draw++ : (com==3)? lose++ : win++;
+                             break;
+                        case 3:
+                            //보
+                            (com==3)? draw++ : (com==1)? lose++ : win++;
+                             break;
+                        default : break;
+                        
+                    }
+                }
+                console.log(`승 : ${win}, 무 : ${draw} 패 : ${lose}`)
+                document.getElementById('result').innerText =
+                `${(win/(10-draw)*100).toFixed(2)}`;
+            })
+            
+        
+        }
+    </script>
+</body>
+</html>
